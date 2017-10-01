@@ -54,17 +54,17 @@ test:
 new:
 	docker run -it --rm \
 		-v $(pwd):/opt \
-    	-w /opt \
-    	--network=phpapp_appnet \
-    	jesmaybe/php \
-    	composer create-project laravel/laravel .
+		-w /opt \
+		--network=phpapp_appnet \
+		jesmaybe/php \
+		composer create-project laravel/laravel .
 
 CMP=""
 composer:
 	docker run -it --rm \
 		-v $(pwd):/opt \
-    	-w /opt \
-    	--network=phpapp_appnet \
-    	jesmaybe/php \
-    	composer $(CMP)
+		-w /opt \
+		--network=phpapp_appnet \
+		jesmaybe/php \
+		composer $(CMP)
 	
