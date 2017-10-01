@@ -28,7 +28,7 @@ tinker:
 		-v $(PWD).tinker:/home/.config \
 		-v $(PWD):/opt \
 		-w /opt \
-		--network=phpapp_appnet \
+		--network=docktest_appnet \
 		jesmaybe/php:latest \
 		php artisan tinker
 
@@ -39,7 +39,7 @@ artisan:
 		-v $(PWD).tinker:/home/.config \
 		-v $(PWD):/opt \
 		-w /opt \
-		--network=phpapp_appnet \
+		--network=docktest_appnet \
 		jesmaybe/php:latest \
 		php artisan $(ART)
 
@@ -47,24 +47,24 @@ test:
 	docker run -it --rm \
 		-v $(PWD):/opt \
 		-w /opt \
-		--network=phpapp_appnet \
+		--network=docktest_appnet \
 		jesmaybe/php:latest \
 		./vendor/bin/phpunit
 
 new:
 	docker run -it --rm \
-		-v $(pwd):/opt \
+		-v $(PWD):/opt \
 		-w /opt \
-		--network=phpapp_appnet \
+		--network=docktest_appnet \
 		jesmaybe/php \
-		composer create-project laravel/laravel .
+		composer create-project laravel/laravel application
 
 CMP=""
 composer:
 	docker run -it --rm \
-		-v $(pwd):/opt \
+		-v $(PWD):/opt \
 		-w /opt \
-		--network=phpapp_appnet \
+		--network=docktest_appnet \
 		jesmaybe/php \
 		composer $(CMP)
 	
