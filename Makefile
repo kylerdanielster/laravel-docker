@@ -57,7 +57,7 @@ new:
     	-w /opt \
     	--network=phpapp_appnet \
     	jesmaybe/php \
-    	composer create-project laravel/laravel application
+    	composer create-project laravel/laravel .
 
 CMP=""
 composer:
