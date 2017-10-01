@@ -8,18 +8,18 @@ This is an example of how you can quickly get up and running with Docker to deve
 
 ### 1. Get the files and spin up containers
 
-clone this repo.
+```
+clone this repo
 clone empty repo into 'application' dir
 
 
-# Start the app, run containers
-#   in the background
-# This will download and build the images
-#   the first time you run this
+# Start the app, run containers in the background
+# This will download and build the images the first time you run this
 docker-compose up -d
-```
+
 
 At this point, we've created containers and have them up and running. However, we didn't create a Laravel application to serve yet. We waited because we wanted a PHP image to get created so we can re-use it and run `composer` commands.
+```
 
 ### 2. Create a new Laravel application
 
@@ -84,11 +84,15 @@ chmod -R o+rw application/bootstrap application/storage
 
 If you'd like, we can add Laravel's Auth scaffolding as well. To do that, we need to run some Artisan commands:
 
-#sample make file commands
+**NOTE**: Sample make file commands
+
+```
 make artisan ART=make:auth
+
 make artisan ART=migrate
 
 make composer CMP="some composer command"
+```
 
 # Fallback for auth
 ```bash
