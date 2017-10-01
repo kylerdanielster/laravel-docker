@@ -77,7 +77,7 @@ REDIS_PORT=6379
 **NOTE**: If you're not running Docker Mac/Windows (which run Docker in a small virtualized layer), you may need to set permissions on the shared directories that Laravel needs to write to. The following will let Laravel write the storage and bootstrap directories:
 
 ```bash
-# From directory php-app
+# From directory mylaradock
 chmod -R o+rw application/bootstrap application/storage
 ```
 
@@ -85,6 +85,7 @@ chmod -R o+rw application/bootstrap application/storage
 
 If you'd like, we can add Laravel's Auth scaffolding as well. To do that, we need to run some Artisan commands:
 make artisan ART=make:auth
+make artisan ART=migrate
 
 make composer CMP="some composer command"
 
@@ -107,5 +108,5 @@ docker run -it --rm \
     php artisan migrate
 ```
 
-Now we can start using our application! Head to `http://localhost/register` to see your Laravel application with auth scaffolding in place.
+Now we can start using our application! Head to `http://localhost:8080/register` to see your Laravel application with auth scaffolding in place.
 
