@@ -10,24 +10,22 @@ This is an example of how you can quickly get up and running with Docker to deve
 
 ```
 clone this repo
-clone empty repo into 'application' dir
-
 
 # Start the app, run containers in the background
 # This will download and build the images the first time you run this
 docker-compose up -d
 
-
 At this point, we've created containers and have them up and running. However, we didn't create a Laravel application to serve yet. We waited because we wanted a PHP image to get created so we can re-use it and run `composer` commands.
 ```
 
 ### 2. Create a new Laravel application
-**NOTE**: Remember to change this phpapp
+**NOTE**: Remember to change network prefix - phpapp - to the container name prefix ie. docktest
 
 ```bash
-# From directory "mylaradock"
+# From top level directory 
 # Create a Laravel application
 make new
+make predis
 
 #Fallback if make doesnt work
 docker run -it --rm \
@@ -37,7 +35,7 @@ docker run -it --rm \
     jesmaybe/php \
     composer create-project laravel/laravel application
 
-#run this
+#Fallback for predis 
 docker run -it --rm \
     -v $(pwd)/application:/opt \
     -w /opt \

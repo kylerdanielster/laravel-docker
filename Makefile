@@ -1,4 +1,4 @@
-.PHONY: up down log tinker artisan test new composer
+.PHONY: up down log tinker artisan test new composer predis
 
 # Set dir of Makefile to a variable to use later
 MAKEPATH := $(abspath $(lastword $(MAKEFILE_LIST)))
@@ -68,3 +68,10 @@ composer:
 		jesmaybe/php \
 		composer $(CMP)
 	
+predis:
+	docker run -it --rm \
+		-v $(PWD)/application:/opt \
+		-w /opt \
+		--network=docktest_appnet \
+		jesmaybe/php \
+		composer require predis/predis
