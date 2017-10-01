@@ -8,10 +8,9 @@ This is an example of how you can quickly get up and running with Docker to deve
 
 ### 1. Get the files and spin up containers
 
-```bash
-# Get docker files
-git clone 
-cd 
+clone this repo.
+clone empty repo into 'application' dir
+
 
 # Start the app, run containers
 #   in the background
