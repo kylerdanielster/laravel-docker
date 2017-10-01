@@ -83,6 +83,8 @@ chmod -R o+rw application/bootstrap application/storage
 ### 3. (Optionally) Add Auth Scaffolding:
 
 If you'd like, we can add Laravel's Auth scaffolding as well. To do that, we need to run some Artisan commands:
+
+#sample make file commands
 make artisan ART=make:auth
 make artisan ART=migrate
 
