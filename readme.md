@@ -22,6 +22,7 @@ At this point, we've created containers and have them up and running. However, w
 ```
 
 ### 2. Create a new Laravel application
+**NOTE**: Remember to change this phpapp
 
 ```bash
 # From directory "mylaradock"
@@ -33,7 +34,7 @@ docker run -it --rm \
     -v $(pwd):/opt \
     -w /opt \
     --network=phpapp_appnet \
-    shippingdocker/php \
+    jesmaybe/php \
     composer create-project laravel/laravel application
 
 #run this
@@ -41,7 +42,7 @@ docker run -it --rm \
     -v $(pwd)/application:/opt \
     -w /opt \
     --network=phpapp_appnet \
-    shippingdocker/php \
+    jesmaybe/php \
     composer require predis/predis
 
 # Restart required to ensure
@@ -95,13 +96,15 @@ make composer CMP="some composer command"
 ```
 
 # Fallback for auth
+**NOTE**: Remember to change this phpapp
 ```bash
+
 # Scaffold authentication views/routes
 docker run -it --rm \
     -v $(pwd)/application:/opt \
     -w /opt \
     --network=phpapp_appnet \
-    shippingdocker/php \
+    jesmaybe/php \
     php artisan make:auth
 
 # Run migrations for auth scaffolding
@@ -109,7 +112,7 @@ docker run -it --rm \
     -v $(pwd)/application:/opt \
     -w /opt \
     --network=phpapp_appnet \
-    shippingdocker/php \
+    jesmaybe/php \
     php artisan migrate
 ```
 
