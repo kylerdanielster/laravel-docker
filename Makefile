@@ -62,7 +62,7 @@ new:
 CMP=""
 composer:
 	docker run -it --rm \
-    	-v $(pwd):/opt \
+		-v $(pwd):/opt \
     	-w /opt \
     	--network=phpapp_appnet \
     	jesmaybe/php \
